@@ -8,7 +8,6 @@ export const Container = styled.div`
   align-items: center;
   padding: 0 14px 0 16px;
   background-color: var(--secondary);
-  height: 48px;
 
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 0px 0px;
   z-index: 2;
