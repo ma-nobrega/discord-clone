@@ -23,6 +23,12 @@ export const Button = styled.button<Props>`
     height: 32px;
   }
 
+  >svg{
+    width: 24px;
+    height: 24px;
+    color: var(--server-options);
+  }
+
   &::before {
     width: 9px;
     height: 9px;
@@ -62,6 +68,13 @@ export const Button = styled.button<Props>`
   &.active,
   &:hover {
     border-radius: 16px;
-    background-color: ${props => props.isHome && 'var(--discord)'};
+    background-color: ${props =>
+      (props.isHome && 'var(--discord)') ||
+      (props.downloader && 'var(--server-options)') ||
+      (props.serverPublic && 'var(--server-options)') ||
+      (props.newServer && 'var(--server-options)')};
+    svg{
+      color: var(--white);
+    }
   }
 `;

@@ -15,13 +15,11 @@ const ServerList: React.FC = () => {
       <ServerButton />
       <ServerButton />
       <ServerButton />
-      <ServerButton />
-      <ServerButton />
-      <ServerButton />
-      <ServerButton />
-      <ServerButton />
-      <ServerButton />
       <ServerButton mentions={7} />
+      <ServerButton newServer />
+      <ServerButton serverPublic />
+      <Separator />
+      <ServerButton downloader />
     </Container>
   );
 };
