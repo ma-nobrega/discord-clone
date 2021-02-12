@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// import { FiChevronDown } from 'react-icons/fi';
+import { UserProps } from '.';
 
 export const Container = styled.div`
   grid-area: UL;
@@ -68,8 +68,9 @@ export const User = styled.div`
   }
 `;
 
-export const Avatar = styled.div`
+export const Avatar = styled.div<UserProps>`
   flex-shrink: 0;
+  position: relative;
 
   width: 32px;
   height: 32px;
@@ -79,5 +80,23 @@ export const Avatar = styled.div`
 
   &.bot {
     background-color: var(--mention-detail);
+  }
+
+  &::after {
+    background-color: ${props =>
+      props.isOnline ? 'var(--online)' : 'var(--offline)'};
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    border-radius: 100%;
+    border: 2px solid var(--quaternary);
+    text-align: right;
+    font-size: 6px;
+    font-weight: bold;
+    color: var(--white);
+    content: '';
+    display: inline;
   }
 `;
